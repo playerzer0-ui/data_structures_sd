@@ -7,15 +7,18 @@ package collections;
 public class LinkedList {
 
     private Node first;
+    private Node last;
     private int size;
 
     public LinkedList() {
         first = null;
+        last = null;
         size = 0;
     }
 
     public void clear() {
         first = null;
+        last = null;
         size = 0;
     }
 
@@ -32,6 +35,7 @@ public class LinkedList {
         Node newNode = new Node(value);
         if (first == null) {
             first = newNode;
+            last = newNode;
         } else {
             newNode.next = first;
             first = newNode;
