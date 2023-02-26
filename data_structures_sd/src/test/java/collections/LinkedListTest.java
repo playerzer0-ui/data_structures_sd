@@ -1,6 +1,7 @@
 package collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -61,4 +62,15 @@ public class LinkedListTest {
         assertEquals(expResult, result);
     }
 
+    /**
+     * Test of remove method, of class LinkedList, where position provided breaks lower bound.
+     */
+    @Test
+    public void testRemove_InvalidPosition_LessThanZero() {
+        int index = -1;
+        LinkedList instance = new LinkedList();
+        assertThrows(IndexOutOfBoundsException.class, () -> {
+            instance.remove(index);
+        });
+    }
 }
