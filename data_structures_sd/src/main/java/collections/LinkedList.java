@@ -57,7 +57,7 @@ public class LinkedList {
             first = newNode;
         } else {
             Node current = first;
-            while(current.next != null){
+            while (current.next != null) {
                 current = current.next;
             }
             current.next = newNode;
@@ -86,20 +86,54 @@ public class LinkedList {
         return true;
     }
 
-    public int indexOf (int value){
-        if(first == null){
+    public int indexOf(int value) {
+        if (first == null) {
             return -1;
         }
-        
+
         Node current = first;
-        for(int i = 0; i < size; i++){
-            if (value == current.data)
+        for (int i = 0; i < size; i++) {
+            if (value == current.data) {
                 return i;
+            }
             current = current.next;
         }
         return -1;
     }
-    
+
+    public int set(int index, int value) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid position provided");
+        }
+        Node current = first;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        int original = current.data;
+        current.data = value;
+        return original;
+    }
+
+    public int remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Illegal position supplied!");
+        }
+        int original;
+        if (index == 0) {
+            original = first.data;
+            first = first.next;
+        } else {
+            Node current = first;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            original = current.next.data;
+            current.next = current.next.next;
+        }
+        size--;
+        return original;
+    }
+
     private static class Node {
 
         private int data;
