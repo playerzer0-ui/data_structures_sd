@@ -73,4 +73,48 @@ public class LinkedListTest {
             instance.remove(index);
         });
     }
+
+    /**
+     * Test of add method, of class LinkedList, where list is initially empty.
+     */
+    @Test
+    public void testAdd_EmptyList() {
+        int value = 0;
+        LinkedList instance = new LinkedList();
+        boolean expResult = true;
+        boolean result = instance.add(value);
+        assertEquals(expResult, result);
+
+        int expSize = 1;
+        int resultSize = instance.size();
+        assertEquals(expSize, resultSize);
+
+        int expValue = value;
+        int resultValue = instance.get(0);
+        assertEquals(expValue, resultValue);
+    }
+
+    /**
+     * Test of add method, of class LinkedList, where list is already populated.
+     */
+    @Test
+    public void testAdd_PopulatedList() {
+        int value = 0;
+        LinkedList instance = new LinkedList();
+        instance.add(1);
+        instance.add(2);
+        instance.add(3);
+        instance.add(4);
+        boolean expResult = true;
+        boolean result = instance.add(value);
+        assertEquals(expResult, result);
+
+        int expSize = 5;
+        int resultSize = instance.size();
+        assertEquals(expSize, resultSize);
+
+        int expValue = value;
+        int resultValue = instance.get(4);
+        assertEquals(expValue, resultValue);
+    }
 }
