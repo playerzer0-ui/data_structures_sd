@@ -59,12 +59,10 @@ public class LinkedList {
         Node newNode = new Node(value);
         if (first == null) {
             first = newNode;
+            last = newNode;
         } else {
-            Node current = first;
-            while (current.next != null) {
-                current = current.next;
-            }
-            current.next = newNode;
+            last.next = newNode;
+            last = newNode;
         }
         size++;
         return true;
