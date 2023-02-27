@@ -22,6 +22,13 @@ public class LinkedListDemo {
         tester.remove(3);
         System.out.println("After removing from position 3 (#4 should not appear)");
         printList(tester);
+        // Removing from end of list
+        tester.remove(4);
+        System.out.println("After removing from position 4 (#6 should not appear)");
+        printList(tester);
+        
+        tester.add(7);
+        printList(tester);
     }   
     
     public static void printList(LinkedList tester){
