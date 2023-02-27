@@ -129,6 +129,11 @@ public class LinkedList {
             for (int i = 0; i < index - 1; i++) {
                 current = current.next;
             }
+            
+            if(current.next == last){
+                last = current;
+            }
+            
             original = current.next.data;
             current.next = current.next.next;
         }
