@@ -133,7 +133,6 @@ public class LinkedList {
             if(current.next == last){
                 last = current;
             }
-            
             original = current.next.data;
             current.next = current.next.next;
         }
