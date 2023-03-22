@@ -142,8 +142,8 @@ public class LinkedList {
 
     protected static class Node {
 
-        private int data;
-        private Node next;
+        protected int data;
+        protected Node next;
 
         public Node(int value) {
             this.data = value;

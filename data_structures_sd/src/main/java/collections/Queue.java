@@ -15,6 +15,16 @@ public class Queue extends LinkedList{
     public boolean add(int value, int pos){
         throw new UnsupportedOperationException("Method not available for queues");
     }
+
+    /**
+     * add employee to the end of the list
+     * @param value the employee
+     * @return true
+     */
+    @Override
+    public boolean add(int value){
+        return super.add(value);
+    }
     
     public int remove(){
         if(isEmpty()){
@@ -22,7 +32,19 @@ public class Queue extends LinkedList{
         }
         return super.remove(0);
     }
-    
+
+    /**
+     * get the first element from queue
+     * @return employee or null
+     */
+    public Integer peek(){
+        if(isEmpty()){
+            return null;
+        }
+        else{
+            return super.get(0);
+        }
+    }
    
     public void empty(){
         super.clear();
