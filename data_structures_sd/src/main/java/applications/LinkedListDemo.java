@@ -1,6 +1,7 @@
 package applications;
 
 import collections.LinkedList;
+import collections.Queue;
 
 /**
  *
@@ -29,6 +30,9 @@ public class LinkedListDemo {
         
         tester.add(7);
         printList(tester);
+        
+        Queue myqueue = new Queue();
+        
     }   
     
     public static void printList(LinkedList tester){
